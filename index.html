@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+
+    <style>
+        input{
+            display: block;
+        }
+
+        #test1{
+            height:100px;
+            width:100px;
+            border:1px solid red;
+        }
+
+        #test2{
+            height:50px;
+            width:50px;
+            border:1px solid red;
+        }
+
+        #test3{
+            height:10px;
+            width:10px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="first">Click me</h1>
+    <h1>Testing</h1>
+    <h1>Testing</h1>
+    <h1>Testing</h1>
+    <h1>Testing</h1>
+    <h1>Testing</h1>
+    <h1>Testing</h1>
+    <h1>Testing</h1>
+    <h1>Testing</h1>
+    <h1>Testing</h1>
+    <h1>Testing</h1>
+    <h1>Testing</h1>
+    <h1>Testing</h1>
+    <button id="scrollUp">Scroll Up</button>
+    <br>
+
+    <input type="checkBox" id="check" >
+    <input type="submit" id="checkBox" disabled="disabled">
+    <br>
+
+    <!--Uppgift 5-->
+    <a href="https://www.w3resource.com"><img src="bil.jpeg" alt="w3resource logo" width="150" height="78" onerror="$(this).hide()" /></a>
+    <br>
+
+    <p>Testing <span id="blink">This</span> Blinking Text</p>
+    <br>
+
+    <table>
+        <thead>
+            <tr>Test 1</tr>
+            <tr>Test 2</tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Test</td>
+                <td>Test</td>
+            </tr>
+            <tr>
+                <td>Test</td>
+                <td>Test</td>
+            </tr>
+            <tr>
+                <td>Test</td>
+                <td>Test</td>
+            </tr>
+            <tr>
+                <td>Test</td>
+                <td>Test</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <p id="print">Print this page</p>
+    <br>
+    <p>Max 6 characters.</p>
+    <textarea id="textArea"></textarea>
+    <br>
+
+    <p><span class="bold">Hi</span>, how are you?</p>
+    <p><span class="bold">What</span> happeneed here?</p>
+    <p><span class="bold">Greetings</span>, where are you?</p>
+    <br>
+
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <br>
+
+    <p class="hejsan">aufhuiasdhif</p>
+    <p class="hejsan">aufhuiasdhif</p>
+    <p class="hejsan">aufhuiasdhif</p>
+    <script>
+        //Uppgift 1 
+        $("#first").click(function(){
+            alert("Hi");
+        });
+
+        //Uppgift 2
+        $("#scrollUp").click(function(){
+            $("html, body").animate({scrollTop: 0})
+        });
+        
+        //Uppgfit 3
+        $("html, body").on("contextmenu", function(){
+            return false;
+        });
+
+        //Uppgift 4
+        $("#check").click(function(){
+            if($("#checkBox").is(':disabled')){
+                $("#checkBox").prop("disabled", false);
+            }
+            else{
+                $("#checkBox").prop("disabled", true);
+            }
+        });
+
+        //Uppgift 6
+        setInterval(function () {
+            $("#blink").fadeOut(300);
+            $("#blink").fadeIn(300);
+        }, 2000);
+
+        //Uppgift 7
+        $(function(){
+            $("tr:odd").css("background-color", "red");
+        });
+
+        //Uppgift 8
+        $("#print").click(function(){
+            window.print();
+        });
+
+        //Uppgift 9
+        $("#textArea").attr("maxlength", 6);    
+
+        //Uppgift 10
+        $(".bold").css("font-weight", "bold");
+
+        //Uppgfit 11
+        var test3 = $("<div id=\"test3\"></div>");
+        $("#test2").append(test3);
+
+        //Uppgift 12
+        $("#test2").appendTo("#test1");
+
+        //Uppgift 18
+        $(".hejsan").removeClass();
+
+        
+    </script>
+</body>
+</html>
